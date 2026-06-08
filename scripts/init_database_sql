@@ -1,0 +1,57 @@
+/*
+===============================================================================
+ Database Setup Script
+===============================================================================
+ Purpose:
+    - Creates the DataProject database.
+    - Creates the Bronze, Silver, and Gold schemas used in the
+      Medallion Architecture.
+    - Recreates the database if it already exists.
+
+ Schemas:
+    bronze -> Raw source data
+    silver -> Cleaned and transformed data
+    gold   -> Business-ready data for analytics and reporting
+
+ WARNING:
+    This script will permanently delete the existing DataProject database
+    (if it exists) and all data stored within it.
+    Ensure you have a backup before executing this script in any
+    non-development environment.
+===============================================================================
+*/
+
+-- Recreate the database if it already exists
+USE master;
+GO
+
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataProject')
+BEGIN
+    -- Close existing connections to the database
+    ALTER DATABASE DataProject
+    SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+
+    -- Drop the existing database
+    DROP DATABASE DataProject;
+END
+GO
+
+-- Create the database
+CREATE DATABASE DataProject;
+GO
+
+-- Switch to the database
+USE DataProject;
+GO
+
+-- Create Bronze schema (raw data)
+CREATE SCHEMA bronze;
+GO
+
+-- Create Silver schema (cleaned and transformed data)
+CREATE SCHEMA silver;
+GO
+
+-- Create Gold schema (business-ready data)
+CREATE SCHEMA gold;
+GO
