@@ -265,18 +265,12 @@ Through this project I gained hands-on experience in:
 
 ---
 
-## 🚀 Future Enhancements
-
-- Incremental Loading
-- Change Data Capture (CDC)
-- SQL Server Agent Scheduling
-- Data Quality Monitoring
-- Azure Data Factory Integration
-- Cloud-Based Data Warehouse Deployment
+## License
+This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 About Me
 
 **Bhaddirraju Manideep**
 
